@@ -17,9 +17,17 @@ class Product (models.Model):
     title = models.CharField(max_length=50)
     slug = models.SlugField(max_length=50)
     description = models.TextField(blank=True)
-    price = models.IntegerField()
+    price = models.FloatField()
     created_date = models.DateTimeField(auto_now_add=True)
     update_date = models.DateTimeField(auto_now=True)
     
+    class Meta:
+        ordering = ('-created_date', )
+    
     def __str__(self):
         return self.title
+    
+    def get_display_price(self):
+        return self.price/100
+    
+    
