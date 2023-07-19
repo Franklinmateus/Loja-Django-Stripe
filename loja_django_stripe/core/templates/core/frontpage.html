@@ -15,7 +15,7 @@ Loja Django
                 <a href="{% url 'product_details' product.category.slug product.slug %}">
                     {% if product.image%}
                     <div class="image" mb-2>
-                        <img src="{{product.image.url}}" alt="Foto produto {{product.image.url}}">
+                        <img src="{{product.image.url}}" height="400" width="600" alt="Foto produto {{product.image.url}}">
                     </div>
                     {% endif %}
                     <h2 class="text-xl">{{product.title}}</h2>

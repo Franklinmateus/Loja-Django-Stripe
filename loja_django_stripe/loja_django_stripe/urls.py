@@ -5,8 +5,9 @@ from django.urls import path, include
 from core.views import frontpage, sobre
 
 urlpatterns = [
+    path('sobre', sobre, name='sobre'),
     path('admin/', admin.site.urls),
+    path('', include('userprofile.urls')),
     path('', include('loja.urls')),
     path('', frontpage, name='frontpage'),
-    path('sobre', sobre, name='sobre'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
